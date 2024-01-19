@@ -35,7 +35,7 @@ module ControlUnit(
     always @ (Opcode)
 begin
 case(Opcode)
-4'b000: 
+4'b0000:  //AND 
     begin
     RegDst = 1;
     AluSrc = 0;
@@ -48,7 +48,98 @@ case(Opcode)
     ALUOp[0] = 0;
     end
 
-4'b1100:
+4'b0010:   //OR
+    begin
+    RegDst = 1;
+    AluSrc = 0;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 0;
+    end 
+    
+4'b0011:   //XOR
+    begin
+    RegDst = 1;
+    AluSrc = 0;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite =0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 0;
+    end 
+    
+4'b0100:  //ADD
+    begin
+    RegDst = 1;
+    AluSrc = 0;
+    RegWrite = 0;
+    MemRead = 1;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 0;
+    end 
+    
+4'b0101:  //ADDI
+    begin
+    RegDst = 0;
+    AluSrc = 1;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 1;
+    end 
+    
+    
+4'b1100:  //SUB
+    begin
+    RegDst = 1;
+    AluSrc = 0;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 0;
+    end 
+
+4'b1101:   //SUBI
+    begin
+    RegDst = 0;
+    AluSrc = 1;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 1;
+    end 
+
+4'b0001:   //SLTI
+    begin
+    RegDst = 0;
+    AluSrc = 1;
+    MemToReg = 0;
+    RegWrite = 1;
+    MemRead = 0;
+    MemWrite = 0;
+    Branch = 0;
+    ALUOp[1] = 1;
+    ALUOp[0] = 1;
+    end 
+
+ 4'b1100:  //LW
     begin
     RegDst = 0;
     AluSrc = 1;
@@ -60,8 +151,8 @@ case(Opcode)
     ALUOp[1] = 0;
     ALUOp[0] = 0;
     end 
-    
-4'b1101:
+
+4'b1101:  //SW
     begin
     RegDst = 0;
     AluSrc = 1;
@@ -73,11 +164,12 @@ case(Opcode)
     ALUOp[1] = 0;
     ALUOp[0] = 0;
     end 
-    
-4'b1111:
+
+ 4'b1111:  //BEQ
     begin
     RegDst = 0;
     AluSrc = 0;
+    MemToReg = 0;
     RegWrite = 0;
     MemRead = 0;
     MemWrite = 0;
@@ -85,32 +177,31 @@ case(Opcode)
     ALUOp[1] = 0;
     ALUOp[0] = 1;
     end 
-    
-4'b1001:
+
+4'b0010:  //SLL
     begin
-    RegDst = 0;
-    AluSrc = 1;
+    RegDst = 1;
+    AluSrc = X;
     MemToReg = 0;
     RegWrite = 1;
     MemRead = 0;
     MemWrite = 0;
     Branch = 0;
     ALUOp[1] = 1;
-    ALUOp[0] = 1;
+    ALUOp[0] = 0;
     end 
-    
-    
-4'b1011:
+
+4'b0010:  //SRA
     begin
-    RegDst = 0;
-    AluSrc = 1;
+    RegDst = 1;
+    AluSrc = X;
     MemToReg = 0;
     RegWrite = 1;
     MemRead = 0;
     MemWrite = 0;
     Branch = 0;
     ALUOp[1] = 1;
-    ALUOp[0] = 1;
+    ALUOp[0] = 0;
     end 
 endcase
 
