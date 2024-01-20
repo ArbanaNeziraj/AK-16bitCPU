@@ -35,47 +35,35 @@ module RegisterFileTest();
     initial
     begin
        
-        // Prisni një cikël klok
         #5 Clock = 1;
 
-        // Ndërro vlerat e RS, RT, dhe RD
         RS = 2'b01;
         RT = 2'b10;
         RD = 2'b11;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndrysho vlerën e WriteData
         WriteData = 16'd5678;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndrysho vlerën e PC
         PC = 16'd20;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndrysho vlerën e RegWrite
         RegWrite = 0;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndrysho vlerën e PC_out
         PC_out = 16'd30;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndalo simulimin
         $stop;
     end
 endmodule

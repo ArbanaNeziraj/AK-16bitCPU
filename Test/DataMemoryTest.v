@@ -35,26 +35,20 @@ initial
         MemRead = 0;
         Clock = 0;
 
-        // Prisni një cikël klok
         #5 Clock = 1;
 
-        // Ndërro vlerën e Address dhe WriteData
         Address = 16'd20;
         WriteData = 16'd5678;
         MemWrite = 1;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndryshimi i vlerës së MemRead
         MemRead = 1;
         #5 Clock = 0;
 
-        // Prit një cikël klok
         #5 Clock = 1;
 
-        // Ndalo simulimin
         $stop;
     end
 endmodule
