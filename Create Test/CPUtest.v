@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 20.01.2024 02:37:21
+// Create Date: 01/20/2024 02:57:38 AM
 // Design Name: 
-// Module Name: CPUtest
+// Module Name: CPU_Test
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,24 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module CPUtest();
+module CPU_Test();
 reg Clock;
-reg [15:0] i;
-
-
-initial
-begin
-for(i=0; i < 40; i=i+1) //40x nderro nga Clock 0 - 1, 40 tehe pozitive
-begin
-#10 Clock = 0;
-#10 Clock = 1;
+initial 
+begin 
+#0 Clock = 1'b0;
+#100 Clock=1'b0;
 end
 
-#10 $stop;
+always
+begin
+#5 Clock=~Clock; 
 end
 
+CPU CPU(Clock);
 
-
-CPU CPU16(Clock);
 endmodule
