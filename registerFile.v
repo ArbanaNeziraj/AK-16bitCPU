@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module registerFile(
+module RegisterFile(
     input [1:0] RS,
     input [1:0] RT,
     input [1:0] RD,

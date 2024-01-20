@@ -37,171 +37,171 @@ begin
 case(Opcode)
 4'b0000:  //AND 
     begin
-    RegDst = 1;
-    AluSrc = 0;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'b0;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end
 
 4'b0010:   //OR
     begin
-    RegDst = 1;
-    AluSrc = 0;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'b0;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
     
 4'b0011:   //XOR
     begin
-    RegDst = 1;
-    AluSrc = 0;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite =0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'b0;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
     
 4'b0100:  //ADD
     begin
-    RegDst = 1;
-    AluSrc = 0;
-    RegWrite = 0;
-    MemRead = 1;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'b0;
+    RegWrite = 1'b0;
+    MemRead = 1'b1;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
     
 4'b0101:  //ADDI
     begin
-    RegDst = 0;
-    AluSrc = 1;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 1;
+    RegDst = 1'b0;
+    AluSrc = 1'b1;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b1;
     end 
     
     
 4'b1100:  //SUB
     begin
-    RegDst = 1;
-    AluSrc = 0;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'b0;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
 
 4'b1101:   //SUBI
     begin
-    RegDst = 0;
-    AluSrc = 1;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 1;
+    RegDst = 1'b0;
+    AluSrc = 1'b1;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b1;
     end 
 
 4'b0001:   //SLTI
     begin
-    RegDst = 0;
-    AluSrc = 1;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 1;
+    RegDst = 1'b0;
+    AluSrc = 1'b1;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b1;
     end 
 
  4'b1100:  //LW
     begin
-    RegDst = 0;
-    AluSrc = 1;
-    MemToReg = 1;
-    RegWrite = 1;
-    MemRead = 1;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 0;
-    ALUOp[0] = 0;
+    RegDst = 1'b0;
+    AluSrc = 1'b1;
+    MemToReg = 1'b1;
+    RegWrite = 1'b1;
+    MemRead = 1'b1;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b0;
+    ALUOp[0] = 1'b0;
     end 
 
 4'b1101:  //SW
     begin
-    RegDst = 0;
-    AluSrc = 1;
-    MemToReg = 0;
-    RegWrite = 0;
-    MemRead = 0;
-    MemWrite = 1;
-    Branch = 0;
-    ALUOp[1] = 0;
-    ALUOp[0] = 0;
+    RegDst = 1'b0;
+    AluSrc = 1'b1;
+    MemToReg = 1'b0;
+    RegWrite = 1'b0;
+    MemRead = 1'b0;
+    MemWrite = 1'b1;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b0;
+    ALUOp[0] = 1'b0;
     end 
 
  4'b1111:  //BEQ
     begin
-    RegDst = 0;
-    AluSrc = 0;
-    MemToReg = 0;
-    RegWrite = 0;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 1;
-    ALUOp[1] = 0;
-    ALUOp[0] = 1;
+    RegDst = 1'b0;
+    AluSrc = 1'b0;
+    MemToReg = 1'b0;
+    RegWrite = 1'b0;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b1;
+    ALUOp[1] = 1'b0;
+    ALUOp[0] = 1'b1;
     end 
 
 4'b0010:  //SLL
     begin
-    RegDst = 1;
-    AluSrc = X;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'bX;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
 
 4'b0010:  //SRA
     begin
-    RegDst = 1;
-    AluSrc = X;
-    MemToReg = 0;
-    RegWrite = 1;
-    MemRead = 0;
-    MemWrite = 0;
-    Branch = 0;
-    ALUOp[1] = 1;
-    ALUOp[0] = 0;
+    RegDst = 1'b1;
+    AluSrc = 1'bX;
+    MemToReg = 1'b0;
+    RegWrite = 1'b1;
+    MemRead = 1'b0;
+    MemWrite = 1'b0;
+    Branch = 1'b0;
+    ALUOp[1] = 1'b1;
+    ALUOp[0] = 1'b0;
     end 
 endcase
 
