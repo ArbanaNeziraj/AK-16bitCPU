@@ -21,9 +21,9 @@
 
 
 module registerFile(
-    input [2:0] RS,
-    input [2:0] RT,
-    input [2:0] RD,
+    input [1:0] RS,
+    input [1:0] RT,
+    input [1:0] RD,
     input [15:0] WriteData,
     input [15:0] PC,
     output [15:0] ReadRS,
